@@ -6,7 +6,10 @@ import gleam/option.{type Option, None, Some}
 /// Zips two lists into tuples containing optional values. Zipping ends when all
 /// lists are exhausted.
 ///
-/// zip_longest_2([1], ["a", "b"]) -> [#(Some(1), Some("a")), #(None, Some("b"))]
+/// ```gleam
+/// zip_longest_2([1], ["a", "b"])
+/// // -> [#(Some(1), Some("a")), #(None, Some("b"))]
+/// ```
 pub fn zip_longest_2(
   list: List(a),
   other: List(b),
@@ -29,7 +32,10 @@ fn do_zip_longest_2(
 /// Zips two lists into tuples of values. Zipping ends when the shortest list is
 /// exhausted.
 ///
-/// zip_2([1, 2], ["a"]) -> [#(1, "a")]
+/// ```gleam
+/// zip_2([1, 2], ["a"])
+/// // -> [#(1, "a")]
+/// ```
 pub fn zip_2(list: List(a), other: List(b)) -> List(#(a, b)) {
   list |> list.zip(other)
 }
@@ -38,8 +44,12 @@ pub fn zip_2(list: List(a), other: List(b)) -> List(#(a, b)) {
 /// of tuples is returned within `Ok`. If the lists are not the same length,
 /// `Error(Nil)` is returned.
 ///
-/// strict_zip_2([1], ["a"]) -> Ok([#(1, "a")])
-/// strict_zip_2([1, 2], ["a"]) -> Error(Nil)
+/// ```gleam
+/// strict_zip_2([1], ["a"])
+/// // -> Ok([#(1, "a")])
+/// strict_zip_2([1, 2], ["a"])
+/// // -> Error(Nil)
+/// ```
 pub fn strict_zip_2(list: List(a), other: List(b)) -> Result(List(#(a, b)), Nil) {
   list |> list.strict_zip(other)
 }
@@ -49,7 +59,10 @@ pub fn strict_zip_2(list: List(a), other: List(b)) -> Result(List(#(a, b)), Nil)
 /// Zips three lists into tuples containing optional values. Zipping ends when
 /// all lists are exhausted.
 ///
-/// zip_longest_3([1], ["a", "b"], [True]) -> [#(Some(1), Some("a"), Some(True)), #(None, Some("b"), None)]
+/// ```gleam
+/// zip_longest_3([1], ["a", "b"], [True])
+/// // -> [#(Some(1), Some("a"), Some(True)), #(None, Some("b"), None)]
+/// ```
 pub fn zip_longest_3(
   list: List(a),
   other_1: List(b),
@@ -74,7 +87,10 @@ fn do_zip_longest_3(
 /// Zips three lists into tuples of values. Zipping ends when the shortest list
 /// is exhausted.
 ///
-/// zip_3([1], ["a", "b"], [1.0, 1.1]) -> [#(1, "a", 1.0)]
+/// ```gleam
+/// zip_3([1], ["a", "b"], [1.0, 1.1])
+/// // -> [#(1, "a", 1.0)]
+/// ```
 pub fn zip_3(
   list: List(a),
   other_1: List(b),
@@ -100,8 +116,12 @@ fn do_zip_3(
 /// of tuples is returned within `Ok`. If the lists are not the same length,
 /// `Error(Nil)` is returned.
 ///
-/// strict_zip_3([1], ["a"], [1.0]) -> Ok([#(1, "a", 1.0)])
-/// strict_zip_3([1, 2], ["a"], [1.0]) -> Error(Nil)
+/// ```gleam
+/// strict_zip_3([1], ["a"], [1.0])
+/// // -> Ok([#(1, "a", 1.0)])
+/// strict_zip_3([1, 2], ["a"], [1.0])
+/// // -> Error(Nil)
+/// ```
 pub fn strict_zip_3(
   list: List(a),
   other_1: List(b),
@@ -129,7 +149,10 @@ fn do_strict_zip_3(
 /// Zips four lists into tuples containing optional values. Zipping ends when
 /// all lists are exhausted.
 ///
-/// zip_longest_4([1], ["a", "b"], [1.0], [True, False]) -> [#(Some(1), Some("a"), Some(1.0), Some(True)), #(None, Some("b"), None, Some(False))]
+/// ```gleam
+/// zip_longest_4([1], ["a", "b"], [1.0], [True, False])
+/// // -> [#(Some(1), Some("a"), Some(1.0), Some(True)), #(None, Some("b"), None, Some(False))]
+/// ```
 pub fn zip_longest_4(
   list: List(a),
   other_1: List(b),
@@ -156,7 +179,10 @@ fn do_zip_longest_4(
 /// Zips four lists into tuples of values. Zipping ends when the shortest list
 /// is exhausted.
 ///
-/// zip_4([1], ["a", "b"], [1.0], [True, False]) -> [#(1, "a", 1.0, True)]
+/// ```gleam
+/// zip_4([1], ["a", "b"], [1.0], [True, False])
+/// // -> [#(1, "a", 1.0, True)]
+/// ```
 pub fn zip_4(
   list: List(a),
   other_1: List(b),
@@ -184,8 +210,12 @@ fn do_zip_4(
 /// of tuples is returned within `Ok`. If the lists are not the same length,
 /// `Error(Nil)` is returned.
 ///
-/// strict_zip_4([1], ["a"], [1.0], [True]) -> Ok([#(1, "a", 1.0, True)])
-/// strict_zip_4([1, 2], ["a"], [1.0], [True]) -> Error(Nil)
+/// ```gleam
+/// strict_zip_4([1], ["a"], [1.0], [True])
+/// // -> Ok([#(1, "a", 1.0, True)])
+/// strict_zip_4([1, 2], ["a"], [1.0], [True])
+/// // -> Error(Nil)
+/// ```
 pub fn strict_zip_4(
   list: List(a),
   other_1: List(b),
