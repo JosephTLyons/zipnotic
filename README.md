@@ -8,7 +8,7 @@ A grab bag of zip functions.
 ## Installation
 
 ```sh
-gleam add zipnotic@1
+gleam add zipnotic
 ```
 
 ## Usage
